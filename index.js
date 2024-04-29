@@ -1,13 +1,30 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      const sum = array[i] + array[j];
+      if (sum === target) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n^2)
 */
 
 /* 
   Add your pseudocode here
+  Loop through the array
+  For each element, sum it to every array element after it
+  Compare the sum to the target
+  If true, return true and exit the loop/function at that point
+  If not, continue until the final element of the array
+  If no combination is found after the loops, let the functiion return false
 */
 
 /*
